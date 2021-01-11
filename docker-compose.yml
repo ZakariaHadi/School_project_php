@@ -1,0 +1,15 @@
+###############################################################################
+version: "3.1"
+services:
+
+    webserver:
+      build: ./docker
+      container_name: apache2webserver
+      ports:
+        - 80:80
+      volumes:
+        - ./www:/var/www/html/
+        - ./docker/configs/000-default.conf:/etc/apache2/sites-available/000-default.conf
+        - ./docker/configs/apache2.conf:/etc/apache2/apache2.conf
+        - ./docker/configs/php.ini:/usr/local/etc/php/php.ini
+
