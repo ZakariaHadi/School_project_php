@@ -53,7 +53,7 @@ class ExamenSessionService implements Examen
     public function printResults() : void {
         echo "Nom et Prenom ### Score ### comments \n";
         foreach($this->classement as $key=>$value)
-            echo nl2br ("\n".$key." => ".$value."\n");
+            echo nl2br ($key." => ".$value.$value->getComment()."\n");
 
           
 }

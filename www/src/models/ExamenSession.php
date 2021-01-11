@@ -12,10 +12,11 @@ class ExamenSession
     
     private $supervisor;
     private $students;
-    
-    public function __construct(Enseignant $supervisor, Etudiant &...$students){
+    private $cours;
+    public function __construct(Enseignant $supervisor, Etudiant &...$students,Cours $cours){
         $this->supervisor = $supervisor;        
         $this->students = $students;
+        $this->cours = $cours;
 
     }
 

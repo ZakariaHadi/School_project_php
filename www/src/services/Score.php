@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace School\services;
 
-use School\core\ExaminationException;
+use School\services\ExaminationException;
 
 class Score
 {

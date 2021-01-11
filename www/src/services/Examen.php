@@ -8,8 +8,8 @@ use School/models/Etudiant;
 
 interface Examen
 {
-    public function examinate(Etudiant ...$etudiants) : void;
-    public function rank(...$sessionResults) : array;
+    public function examinate() : void;
+    public function rank() : void;
 
 
 }

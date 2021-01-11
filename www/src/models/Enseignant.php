@@ -2,12 +2,12 @@
 declare(strict_types=1);
 
 
-namespace Ecole\models;
+namespace School\models;
 
-use Ecole\models\User;
+use School\models\Utilisateur;
 
 
-class Teacher extends User
+class Enseignant extends Utilisateur
 {
 
     public function __construct(string $fName,string $lName)
