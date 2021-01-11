@@ -7,11 +7,11 @@
     array (
     ),
     'reference' => NULL,
-    'name' => 'ecole/note',
+    'name' => 'zak/school',
   ),
   'versions' => 
   array (
-    'ecole/note' => 
+    'zak/school' => 
     array (
       'pretty_version' => '1.0.0+no-version-set',
       'version' => '1.0.0.0',

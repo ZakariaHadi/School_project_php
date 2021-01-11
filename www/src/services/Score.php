@@ -35,7 +35,6 @@ class Score
 
         $this->score = $score;
 
-        $this->generateComments();
         return;
     }
 
@@ -47,7 +46,7 @@ class Score
         return $this->comment;
     }
 
-    private function generateComments(): void {
+    public function generateComments(): void {
 
         $this->comment = ($this->score >= 0 && $this->score <10 ? "ELIMINATOIRE :(" : "VALIDE :)");
             

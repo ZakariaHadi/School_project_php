@@ -13,7 +13,7 @@ class ExamenSession
     private $supervisor;
     private $students;
     private $cours;
-    public function __construct(Enseignant $supervisor, Etudiant &...$students,Cours $cours){
+    public function __construct(Enseignant $supervisor,Cours $cours, Etudiant &...$students){
         $this->supervisor = $supervisor;        
         $this->students = $students;
         $this->cours = $cours;
@@ -25,7 +25,7 @@ class ExamenSession
     }
 
     public function getSupervisor(): Enseignant {
-        return (Enseignant) $this->supervisor;
+        return $this->supervisor;
     }
     
     

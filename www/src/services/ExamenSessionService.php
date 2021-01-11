@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace School\services;
 
 use School\models\Etudiant;
-use School\services\ExaminationException;
+use School\models\ExamenSession;
 
 class ExamenSessionService implements Examen
 {
@@ -27,6 +27,8 @@ class ExamenSessionService implements Examen
         try {
             foreach($this->examenSession->getStudents() as $student){
                 $this->sessionResults[((string) $student)] = new Score(Score::generateRandomScore());
+                $this->sessionResults[((string) $student)]->generateComments();
+
             }
 
         } catch (ExaminationException $exception) {
@@ -46,14 +48,14 @@ class ExamenSessionService implements Examen
     }
 
     private function __comparator($a, $b) {
-        return ($a->getScore(), $b->getScore());
+        return ($a->getScore() <= $b->getScore());
     }
     
 
     public function printResults() : void {
-        echo "Nom et Prenom ### Score ### comments \n";
-        foreach($this->classement as $key=>$value)
-            echo nl2br ($key." => ".$value.$value->getComment()."\n");
+        echo nl2br("Nom et Prenom ### Score ### comments \n");
+        foreach($this->sessionResults as $key=>$value)
+            echo nl2br ($key." => ".$value."  ".$value->getComment()." \n");
 
           
 }

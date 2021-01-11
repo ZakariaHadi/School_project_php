@@ -21,11 +21,11 @@ $student5 = new Etudiant("IDE5","HADI", "Zakaria 5");
 $student6 = new Etudiant("IDE6","HADI", "Zakaria 6");
 $student7 = new Etudiant("IDE7","HADI", "Zakaria 7");
 
-$classRoom = array();
-array_push($classRoom,$student1,$student2,$student3,$student4,$student5,$student6,$student7);
+$classRoom[] = $student1;
+array_push($classRoom,$student2,$student3,$student4,$student5,$student6,$student7);
 
 echo nl2br("##### => Initiate tp quiz\n");
-$examenTP = new ExamenSession(new Enseignant("Professeur PHP","nup"),$classRoom,new Cours("Web PHP"));
+$examenTP = new ExamenSession(new Enseignant("Professeur PHP","nup"),new Cours("Web PHP"),...$classRoom);
 
 echo nl2br("##### => get the service wrapper\n");
 $serviceWrapper = new ExamenSessionService($examenTP);

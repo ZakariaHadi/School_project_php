@@ -22,8 +22,3 @@ RUN usermod -u 1000 www-data
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
-
-
-
-# Enable yaml
-#RUN a2enmod yaml

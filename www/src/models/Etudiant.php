@@ -8,9 +8,9 @@ namespace School\models;
 use School\models\Utilisateur;
 
 
-final class Etudiant extends User
+final class Etudiant extends Utilisateur
 {
-    private $Ide ;
+    private $ide ;
 
     public function __construct(string $ide,string $fName, string $lName)
     {
@@ -22,17 +22,17 @@ final class Etudiant extends User
 
     public function __toString()
     {
-        return $this->Ide;
+        return $this->ide;
     }
 
     public function getIde() : String
     {
-        return $this->Ide;
+        return $this->ide;
     }
 
     public function setIde(string $ide)
     {
-        $this->Ide = $ide ;
+        $this->ide = $ide ;
     }
 
     
